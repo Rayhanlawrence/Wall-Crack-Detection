@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Beranda - Sistem Deteksi Retak Beton{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>🔍 Deteksi Retak pada Permukaan Beton secara Otomatis</h1>
+    <p>🧠 Didukung oleh Deep Learning (CNN Model)</p>
+    <div class="buttons">
+        <a href="{{ url_for('uji_gambar') }}" class="btn">Upload Gambar</a>
+        <!-- <a href="{{ url_for('hasil_contoh') }}" class="btn secondary">Lihat Hasil Contoh</a> -->
+    </div>
+</section>
+{% endblock %}

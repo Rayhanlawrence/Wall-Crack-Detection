@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Uji Gambar - Sistem Deteksi Retak Beton{% endblock %}
+
+{% block content %}
+<div class="uji-gambar-container">
+    <h2>Upload Gambar Beton untuk Deteksi Retakan</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="upload-form" style="text-align: center;">
+        <label for="image">Pilih File (.jpg/.png):</label><br/>
+        <input type="file" id="image" name="image" accept=".jpg,.jpeg,.png" required style="margin: 0 auto 10px auto; display: block;" />
+        <button type="submit" style="margin: 10px auto 0 auto; display: block;">Prediksi Sekarang</button>
+    </form>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{{ url_for('index') }}" class="btn back-btn">← Kembali ke Halaman Utama</a>
+    </div>
+
+    {% if filename %}
+    <div class="result-section">
+        <h3>📷 Gambar Diupload:</h3>
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Gambar Diupload" class="uploaded-image" />
+    </div>
+    {% endif %}
+
+    {% if result %}
+    <div class="result-section">
+        <h3>🔍 Hasil Deteksi:</h3>
+        <p class="{{ 'alert' if 'Retak' in result else 'safe' }}">{{ result }}</p>
+        <!-- {% if confidence is not none %}
+        <p>Confidence: {{ confidence | round(2) }}%</p>
+        {% endif %} -->
+        {% if raw_prediction is not none %}
+        <p>Nilai Prediksi Mentah: {{ raw_prediction }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
