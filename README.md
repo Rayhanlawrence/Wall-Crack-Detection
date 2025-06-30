@@ -74,3 +74,6 @@ This is a Flask-based web application for detecting cracks in images using a Con
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Dataset Link
+https://www.kaggle.com/datasets/arunrk7/surface-crack-detection/data
