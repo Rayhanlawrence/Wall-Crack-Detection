@@ -15,7 +15,11 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
 
 # Load the CNN model once when the app starts
+<<<<<<< HEAD
 model = load_model('model/model_retak_dinding_balanced.h5')
+=======
+model = load_model('model/crack_detection_model.h5')
+>>>>>>> 762aff706cbc30bb8b9b5f512c4e50cc7af63cba
 
 # Print model input shape for debugging
 print("Model input shape:", model.input_shape)
@@ -83,9 +87,15 @@ def uji_gambar():
                 threshold = 0.5  # Threshold for crack detection
                 print(prediction)
                 if prediction > threshold:
+<<<<<<< HEAD
                     result = "⚠️ Retak Terdeteksi"
                 else:
                     result = "✅ Tidak Ada Retak"
+=======
+                    result = "✅ Tidak Ada Retak"
+                else:
+                    result = "⚠️ Retak Terdeteksi"
+>>>>>>> 762aff706cbc30bb8b9b5f512c4e50cc7af63cba
             else:
                 result = "Format file tidak didukung. Gunakan .jpg, .jpeg, atau .png."
     return render_template('uji_gambar.html', result=result, filename=filename, confidence=confidence, raw_prediction=raw_prediction)
