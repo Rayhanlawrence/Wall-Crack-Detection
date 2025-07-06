@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Sistem Deteksi Retak Dinding{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body style="font-family: 'Poppins', sans-serif;">
+    <header>
+        <div class="logo">Sistem Deteksi Retak Dinding Batu Bata</div>
+        <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Beranda</a></li>
+            <li><a href="{{ url_for('tentang') }}">Tentang</a></li>
+            <li><a href="{{ url_for('uji_gambar') }}">Uji Gambar</a></li>
+            <!-- <li><a href="{{ url_for('hasil_contoh') }}">Lihat Hasil Contoh</a></li> -->
+            <li><a href="{{ url_for('kontak') }}">Kontak</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        Hak Cipta © 2025 - Muhamad Rayhan / Politeknik Caltex Riau
+    </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Tentang - Sistem Deteksi Retak Dinding Batu Bata{% endblock %}
+
+{% block content %}
+<h2>Tentang Proyek</h2>
+<p>Proyek ini bertujuan untuk mengembangkan sistem deteksi retak pada permukaan batu bata secara otomatis menggunakan teknologi Deep Learning.</p>
+
+<h3>Teknologi yang Digunakan</h3>
+<ul>
+    <li>Convolutional Neural Network (CNN)</li>
+    <li>TensorFlow / Keras</li>
+</ul>
+
+<h3>Dataset</h3>
+<p>Dataset yang digunakan adalah Concrete Crack Dataset dari Kaggle.</p>
+
+<h3>Cara Kerja Model</h3>
+<ul>
+    <li>Training: Melatih model CNN menggunakan dataset retak dinding.</li>
+    <li>Testing: Menguji model dengan gambar baru untuk mendeteksi retak.</li>
+    <li>Thresholding: Menentukan ambang batas untuk klasifikasi retak atau tidak.</li>
+</ul>
+{% endblock %}
